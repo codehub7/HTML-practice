@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p draggable="true">Hello world</p>
+
+    <h3 id="head_id" data-headername="first-header">Heading line is here, <a class="link_id" href="">Click Me</a></h3>
+    <p id="add_something" onclick="changeMe()">Hell</p>
+    <script>
+        const link = document.querySelector('.link_id');
+        const headId = document.querySelector('#head_id');
+        var addSome = document.querySelector("#add_something")
+        console.log("Prev: "+ addSome.innerHTML)
+        function changeMe(){
+            addSome.innerHTML += "<p> Added Element </p>";
+            console.log("Next: "+addSome.innerHTML);
+        }
+
+        link.addEventListener('mouseover',()=>{
+            addSome.innerHTML += "<p> Added Element thourgh event listener</p>";
+            console.log("Next: "+addSome.innerHTML);
+        });
+    </script>
+</body>
+</html>
